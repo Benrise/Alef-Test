@@ -1,5 +1,5 @@
 <template>
-    <div class="form" :class="{ filled: value }">
+    <div class="form" :class="{ filled: modelValue }">
         <label 
             for="form-input" 
             class="form__label">
@@ -9,8 +9,8 @@
         <input 
             id="form-input" 
             class="form__input"
-            v-model="inputValue"
-            @input="handleChange"
+            :value="modelValue" 
+            @input="$emit('update:modelValue', $event.target.value)"
         >
         
     </div>
@@ -19,21 +19,14 @@
 <script>
 export default {
     props: {
-        label: String,
-    },
-    data() {
-        return {
-            value: '',
-        };
-    },
-    methods: {
-        handleChange(event) {
-            this.value = event.target.value;
+        label: {
+            type: String,
+            default: 'Label'
         },
-    },
+        modelValue: {
+            type: String,
+            default: ''
+        }
+    }
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

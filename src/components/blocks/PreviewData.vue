@@ -9,14 +9,14 @@
 
     <main-block title="Дети">
         <template v-slot:elements>
-            <div v-for="(child, index) in childrenData" :key="index">
+            <template v-for="(child, index) in childrenData" :key="index">
                 <BaseButton
                   :label="`${child.name}, ${child.age} лет`"
                   @click="clickButton"
                   severity="default"
                   storage
                 />
-            </div>
+            </template>
         </template>
     </main-block>
 </template>

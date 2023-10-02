@@ -1,8 +1,14 @@
 <template>
     <main-block title="Персональные данные">
         <template v-slot:elements>
-            <BaseForm label="Имя" />
-            <BaseForm label="Возраст" />
+            <BaseForm 
+                label="Имя"
+                v-model="userData.name"
+            />
+            <BaseForm 
+                label="Возраст"
+                v-model="userData.age"
+            />
         </template>
     </main-block>
 
@@ -18,8 +24,11 @@
             />
         </template>
         <template v-slot:elements>
-            <ChildForm/>
-            <ChildForm/>
+            <template v-for="(child, index) in childrenData" :key="index">
+                <ChildForm
+                    :value="child"
+                />
+            </template>
         </template>
         <template v-slot:footer-button>
             <BaseButton 
@@ -43,6 +52,24 @@ export default {
     methods:{
         clickButton(){
             console.log('Added!')
+        }
+    },
+    data(){
+        return {
+            childrenData: [
+                {
+                    name: 'Пётр',
+                    age: '10'
+                },
+                {
+                    name: 'Василий',
+                    age: '14'
+                }
+            ],
+            userData: {
+                name: '',
+                age: ''
+            },
         }
     }
 }

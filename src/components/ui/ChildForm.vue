@@ -1,12 +1,18 @@
 <template>
     <div class="child-form">
-        <BaseForm label="Имя"/>
-        <BaseForm label="Возраст"/>
+        <BaseForm 
+            label="Имя"
+            v-model="valueLocal.name"
+        />
+        <BaseForm 
+            label="Возраст"
+            v-model="valueLocal.age"
+        />
         <BaseButton 
-                label="Удалить"
-                @click="clickButton"
-                severity="primary"
-                text
+            label="Удалить"
+            severity="primary"
+            text
+            @click="remove"
         />
     </div>
 </template>
@@ -19,14 +25,19 @@ export default {
     name: 'ChildForm',
     components: {BaseForm, BaseButton},
     methods:{
-        clickButton(){
-            console.log('Deleted!')
+        remove() {
+            this.$emit('remove')
+        }
+    },
+    props: {
+        value: {
+            type: Object
+        }
+    },
+    data() {
+        return{
+            valueLocal: this.value
         }
     }
-    
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>
