@@ -1,0 +1,143 @@
+.header{
+    background-color: $colors-background; 
+    z-index: 99;
+    box-shadow: 0px 1px 0px 0px rgba(17, 17, 17, 0.10) !important;
+    -webkit-box-shadow: 0px 1px 0px 0px rgba(17, 17, 17,0.10) !important; 
+    -moz-box-shadow: 0px 1px 0px 0px rgba(17, 17, 17, 0.10) !important;
+    &__container {
+        padding: rem(22) rem(22) rem(22) rem(22);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        @media (max-width: em(767.98)) {
+            max-width: none;
+        }
+    }
+
+    &__logo {
+        z-index: 99;
+        display: flex;
+        gap: rem(6);
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__filler {
+        width: 88px;
+        height: 29px;
+        @media (max-width: em(767.98)){
+            display: none;
+        }
+    }
+
+    &__menu {
+        @media (max-width: em(767.98)) {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100%;
+            transition: right 0.3s ease 0s;
+            display: flex;
+            justify-content: end;
+            .menu__list {
+                overflow: auto;
+                flex-direction: column;
+                align-items: start;
+                padding: rem(95) rem(74) rem(44) rem(74);
+                background-color: $colors-primary;
+            }
+            .menu__link {
+                color: white;
+            }
+            
+            &._active {
+                right: 0%;
+            }
+        }
+        @media (max-width: em(339.98)) {
+            width: 100%;
+            .menu__list {
+                width: 100%;
+                padding: rem(95) rem(74) rem(44) rem(24);
+            }
+        }
+    }
+
+    &__menu-icon {
+        display: none;
+        @media (max-width: em(767.98)) {
+            display: block;
+            z-index: 5;
+            position: relative;
+            width: rem(30);
+            height: rem(18);
+            cursor: pointer;
+            span,
+            &::before,
+            &::after {
+                content: "";
+                left: 0;
+                position: absolute;
+                height: rem(2);
+                width: 100%;
+                transition: all 0.2s ease 0s;
+                background-color: $colors-primary;
+            }
+            &::before {
+                top: 0;
+            }
+            &::after {
+                bottom: 0;
+            }
+            span {
+                top: calc(50% - rem(1));
+            }
+        }
+
+        &._active span {
+            transform: scale(0) translate(0px, 50%);
+        }
+        &._active::before {
+            top: 50%;
+            transform: rotate(-45deg) translate(0px, -50%);
+        }
+        &._active::after {
+            transform: scale(0) translate(0px, 50%);
+            bottom: 50%;
+            transform: rotate(45deg) translate(0px, 50%);
+        }
+
+        &._active::before,
+        &._active::after,
+        &._active span {
+            background-color: white;
+        }
+    }
+
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        gap: rem(24);
+    }
+
+    &__link {
+        font-size: rem(20);
+        font-weight: 500;
+        color: $colors-gray;
+        font-size: rem(14);
+        &:hover{
+            color: $colors-primary;
+            cursor: pointer;
+        }
+    }
+}
+
