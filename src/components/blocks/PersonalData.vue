@@ -4,10 +4,12 @@
             <div class="main-block__title">
                 Персональные данные
             </div>
-            <div class="main-block__inputs">
+            <div class="main-block__forms">
                 <BaseForm
                     :label="'Имя'"
-                
+                />
+                <BaseForm
+                    :label="'Возраст'"
                 />
             </div>
         </div>
