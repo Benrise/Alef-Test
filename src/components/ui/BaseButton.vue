@@ -35,7 +35,12 @@ export default {
         outline: {
             type: Boolean,
             default: false
+        },
+        text: {
+            type: Boolean,
+            default: false
         }
+
         
     },
     data(){
@@ -54,6 +59,7 @@ export default {
                 'button_disabled': this.isDisabled,
                 'button_primary': this.severity === 'primary' && !this.outline,
                 'button_outline-primary': this.severity === 'primary' && this.outline,
+                'button_text-primary': this.severity === 'primary' && this.text
             };
         }
     }

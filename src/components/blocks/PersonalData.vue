@@ -4,11 +4,10 @@
             <BaseForm label="Имя" />
             <BaseForm label="Возраст" />
         </template>
-      <BaseForm label="Возраст" />
     </main-block>
 
     <main-block title="Дети (макс. 5)">
-        <template v-slot:button>
+        <template v-slot:header-button>
             <BaseButton 
                 label="Добавить"
                 @click="clickButton"
@@ -18,21 +17,32 @@
                 outline
             />
         </template>
-        
-      <BaseForm label="Возраст" />
+        <template v-slot:form>
+            <ChildForm/>
+            <ChildForm/>
+        </template>
+        <template v-slot:footer-button>
+            <BaseButton 
+                label="Сохранить"
+                @click="clickButton"
+                :isDisabled="false"
+                severity="primary"
+            />
+        </template>
     </main-block>
   </template>
 
 <script>
 import MainBlock from "@/components/blocks/MainBlock.vue";
 import BaseForm from "@/components/ui/BaseForm.vue";
+import ChildForm from "@/components/ui/ChildForm.vue";
 import BaseButton from "@/components/ui/BaseButton.vue";
 export default {
     name: "PersonalData",
-    components: {BaseForm, MainBlock, BaseButton},
+    components: {BaseForm, MainBlock, BaseButton, ChildForm},
     methods:{
         clickButton(){
-            console.log('Clicked!')
+            console.log('Added!')
         }
     }
 }

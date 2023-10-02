@@ -5,7 +5,9 @@
 .main-block{
 
     &__container{
-
+        display: flex;
+        flex-direction: column;
+        gap: rem(20);
     }
     &__title{
         font-size: rem(16);
@@ -21,6 +23,5 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding-bottom: rem(20);
     }
 }

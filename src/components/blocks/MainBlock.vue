@@ -5,11 +5,12 @@
             <div class="main-block__title">
                 {{ title }}
             </div>
-            <slot name="button"></slot> 
+            <slot name="header-button"></slot> 
         </div>
         <div class="main-block__forms">
           <slot name="form"></slot>
         </div>
+        <slot name="footer-button"></slot>
       </div>
     </section>
   </template>

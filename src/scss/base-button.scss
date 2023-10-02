@@ -7,9 +7,12 @@
     align-items: center;
     justify-content: center;
     gap: rem(4);
+    width: fit-content;
+    box-sizing: border-box;
     &__label {
         font-size: rem(14);
         font-weight: 500;
+        line-height: rem(24);
     }
     cursor: pointer;
     user-select: none;
@@ -30,7 +33,15 @@
 
     &_outline-primary {
         background-color: white;
-        border: 2px solid $colors-primary;
+        outline: 2px solid $colors-primary;
+        outline-offset: -2px;
+        color: $colors-primary;
+    }
+
+    &_text-primary {
+        background-color: white;
+        border: none;
+        padding: 0;
         color: $colors-primary;
     }
 
