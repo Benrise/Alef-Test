@@ -1,6 +1,6 @@
 <template>
     <main-block title="Персональные данные">
-        <template v-slot:form>
+        <template v-slot:elements>
             <BaseForm label="Имя" />
             <BaseForm label="Возраст" />
         </template>
@@ -17,7 +17,7 @@
                 outline
             />
         </template>
-        <template v-slot:form>
+        <template v-slot:elements>
             <ChildForm/>
             <ChildForm/>
         </template>

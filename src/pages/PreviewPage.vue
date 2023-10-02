@@ -1,16 +1,14 @@
 <template>
-    <div>
-
+    <div class="wrapper">
+        <PreviewData/>
     </div>
 </template>
 
 <script>
-export default {
-    setup () {
-        
+import PreviewData from "@/components/blocks/PreviewData.vue";
 
-        return {}
-    }
+export default {
+    components: { PreviewData }
 }
 </script>
 

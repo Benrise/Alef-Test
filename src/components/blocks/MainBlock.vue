@@ -7,8 +7,8 @@
             </div>
             <slot name="header-button"></slot> 
         </div>
-        <div class="main-block__forms">
-          <slot name="form"></slot>
+        <div class="main-block__elements">
+          <slot name="elements"></slot>
         </div>
         <slot name="footer-button"></slot>
       </div>

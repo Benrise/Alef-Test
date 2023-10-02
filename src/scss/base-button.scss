@@ -1,5 +1,5 @@
 .button {
-    border-radius: rem(100);
+    border-radius: 100px;
     padding: rem(10) rem(20);
     background-color: $colors-gray;
     display: flex;
@@ -26,6 +26,15 @@
         opacity: 0.5;
     }
 
+    &_storage {
+        pointer-events: none;
+        span {
+            font-size: rem(16);
+            font-weight: 600;
+        }
+        border-radius: 5px;
+    }
+
     &_primary {
         background-color: $colors-primary;
         color: white;
@@ -44,5 +53,25 @@
         padding: 0;
         color: $colors-primary;
     }
+
+    &_default {
+        background-color: $colors-gray-l;
+        color: $colors-black;
+    }
+
+    &_outline-default {
+        background-color: white;
+        outline: 2px solid $colors-gray-l;
+        outline-offset: -2px;
+        color: $colors-gray-l;
+    }
+    
+    &_text-default {
+        background-color: white;
+        border: none;
+        padding: 0;
+        color: $colors-black;
+    }
+    
 
 }

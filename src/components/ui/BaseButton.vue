@@ -39,6 +39,10 @@ export default {
         text: {
             type: Boolean,
             default: false
+        },
+        storage: {
+            type: Boolean,
+            default: false
         }
 
         
@@ -56,10 +60,14 @@ export default {
     computed: {
         buttonClasses(){
             return {
-                'button_disabled': this.isDisabled,
+                'button_disabled': this.disabled,
                 'button_primary': this.severity === 'primary' && !this.outline,
                 'button_outline-primary': this.severity === 'primary' && this.outline,
-                'button_text-primary': this.severity === 'primary' && this.text
+                'button_text-primary': this.severity === 'primary' && this.text,
+                'button_default': this.severity === 'default' && !this.outline,
+                'button_outline-default': this.severity === 'default' && this.outline,
+                'button_text-default': this.severity === 'default' && this.text,
+                'button_storage' : this.storage
             };
         }
     }

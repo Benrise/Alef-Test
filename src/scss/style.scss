@@ -36,15 +36,15 @@ body {
     display: none;
 }
 
-[class*="_regular"] {
+[class*="font-weigh-regular"] {
     font-weight: 400;
 }
 
-[class*="_medium"] {
+[class*="font-weight-medium"] {
     font-weight: 500;
 }
 
-[class*="_bold"] {
+[class*="font-weight-bold"] {
     font-weight: 700;
 }
 
