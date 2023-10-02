@@ -1,11 +1,14 @@
 <template>
     <section class="main-block">
       <div class="main-block__container">
-        <div class="main-block__title">
-          {{ title }}
+        <div class="main-block__header">
+            <div class="main-block__title">
+                {{ title }}
+            </div>
+            <slot name="button"></slot> 
         </div>
         <div class="main-block__forms">
-          <slot></slot>
+          <slot name="form"></slot>
         </div>
       </div>
     </section>
