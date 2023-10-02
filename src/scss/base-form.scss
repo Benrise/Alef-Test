@@ -1,0 +1,49 @@
+.form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+        height: rem(56);
+        width: 100%;
+        border: 1px solid $colors-gray-l;
+        border-radius: rem(4);
+        padding: rem(24) rem(16) rem(6) rem(16);
+        transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        font-size: rem(14);
+        color: $colors-black;
+        font-weight: 400;
+        &:focus {
+            box-shadow: 0 0 0 rem(2) $colors-primary;
+        }
+    }
+
+    &.filled {
+        label {
+            transform: translate(0, rem(12));
+            font-size: rem(13); 
+        }
+    }
+
+    & label {
+        position: absolute;
+        pointer-events: none;
+        transform: translate(0, rem(21)) scale(1);
+        transform-origin: top left;
+        transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+        left: 16px;
+        line-height: 1;
+        font-size: rem(16);
+        color: $colors-gray;
+    }
+
+    &:focus-within label {
+        transform: translate(0, rem(12));
+        font-size: rem(13);
+        color: $colors-primary;  
+    }
+}
+
+
+
+
