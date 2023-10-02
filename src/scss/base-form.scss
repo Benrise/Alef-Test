@@ -33,7 +33,7 @@
         transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
         left: 16px;
         line-height: 1;
-        font-size: rem(16);
+        @include adaptiveValue('font-size', 16, 13);
         color: $colors-gray;
     }
 

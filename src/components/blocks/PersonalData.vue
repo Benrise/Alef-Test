@@ -6,7 +6,7 @@
         </template>
     </main-block>
 
-    <main-block title="Дети (макс. 5)">
+    <main-block title="Дети (макс.&nbsp;5)">
         <template v-slot:header-button>
             <BaseButton 
                 label="Добавить"
