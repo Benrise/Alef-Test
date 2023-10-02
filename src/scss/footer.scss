@@ -1,0 +1,16 @@
+.footer{
+    background-color: $colors-gray-m;
+
+    &__container {
+        position: relative;
+        padding: rem(30);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__copyright-text{
+        font-size: rem(13);
+    }
+
+}
