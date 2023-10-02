@@ -1,26 +1,15 @@
 <template>
-    <section class="main-block">
-        <div class="main-block__container">
-            <div class="main-block__title">
-                Персональные данные
-            </div>
-            <div class="main-block__forms">
-                <BaseForm
-                    :label="'Имя'"
-                />
-                <BaseForm
-                    :label="'Возраст'"
-                />
-            </div>
-        </div>
-    </section>
-</template>
+    <main-block :title="'Персональные данные'">
+      <BaseForm :label="'Имя'" />
+      <BaseForm :label="'Возраст'" />
+    </main-block>
+  </template>
 
 <script>
-
+import MainBlock from "@/components/blocks/MainBlock.vue";
 import BaseForm from "@/components/ui/BaseForm.vue";
 export default {
     name: "PersonalData",
-    components: {BaseForm},
+    components: {BaseForm, MainBlock},
 }
 </script>
