@@ -1,0 +1,9 @@
+@function rem($px, $current: 16) {
+	$remValue:  calc($px / $current) + rem;
+	@return $remValue;
+}
+
+@function em($px, $current: 16) {
+	$result:  calc($px / $current) + em;
+	@return $result;
+}

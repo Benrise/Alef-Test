@@ -1,1 +1,22 @@
-$color-primary: yellow;
+$background-color: #FFF;
+$gray-color: rgba(17, 17, 17, 0.48);
+$black-color: #111;
+$primary-color: #01A7FD;
+
+$minWidth: 280;
+
+$maxWidth: 1920;
+
+$maxWidthContainer: 616;
+
+$containerPadding: 30;
+
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+
+$pc: em($containerWidth);
+$tablet: em(1091.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+$mobileXSmall: em(339.98);
+$mobileXSSmall: em(281.98);
