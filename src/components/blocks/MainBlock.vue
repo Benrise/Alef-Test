@@ -9,6 +9,7 @@
         </div>
         <div class="main-block__elements">
           <slot name="elements"></slot>
+          <slot name="empty-state"></slot>
         </div>
         <slot name="footer-button"></slot>
       </div>

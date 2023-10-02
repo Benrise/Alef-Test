@@ -8,6 +8,7 @@
 	@return $result;
 }
 
+
 @mixin adaptiveValue($property, $startSize, $minSize, $widthFrom: $containerWidth, $widthTo: $minWidth, $keepSize: 0) {
 	// Для calc();
 	$addSize: ($startSize - $minSize);

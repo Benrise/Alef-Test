@@ -12,7 +12,7 @@
             label="Удалить"
             severity="primary"
             text
-            @click="remove"
+            @click="remove()"
         />
     </div>
 </template>
@@ -26,7 +26,7 @@ export default {
     components: {BaseForm, BaseButton},
     methods:{
         remove() {
-            this.$emit('remove')
+            this.$emit('remove', this.value)
         }
     },
     props: {

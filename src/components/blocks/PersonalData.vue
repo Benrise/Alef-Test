@@ -16,25 +16,39 @@
         <template v-slot:header-button>
             <BaseButton 
                 label="Добавить"
-                @click="clickButton"
-                :isDisabled="false"
+                @click="addChild"
+                :disabled="canAdd"
                 leftIcon='add'
                 severity="primary"
                 outline
             />
         </template>
         <template v-slot:elements>
-            <template v-for="(child, index) in childrenData" :key="index">
+            <template v-for="child in childrenData" :key="child.id">
                 <ChildForm
                     :value="child"
+                    @remove="removeChild(child.id)"
                 />
             </template>
+        </template>
+        <template v-slot:empty-state v-if="childrenData.length === 0">
+            <div class="empty-state">
+                <div class="empty-state__container">
+                    <i class="empty-state__icon material-icons">group_add</i>
+                    <h1 class="empty-state__title">Нет детей</h1>
+                    <h2 class="empty-state__text">
+                        Добавьте детей, чтобы продолжить заполнять информацию о вашей семье.
+                        <br>
+                        Если вы нечаянно удалили какого-либо ребёнка, не нажимайте кнопку "Сохранить", а обновите страницу.
+                    </h2>
+                </div>
+            </div>
         </template>
         <template v-slot:footer-button>
             <BaseButton 
                 label="Сохранить"
                 @click="clickButton"
-                :isDisabled="false"
+                :disabled="false"
                 severity="primary"
             />
         </template>
@@ -52,20 +66,34 @@ export default {
     methods:{
         clickButton(){
             console.log('Added!')
+        },
+        removeChild(childId) {
+            const index = this.childrenData.findIndex(child => child.id === childId);
+            if (index !== -1) {
+                this.childrenData.splice(index, 1);
+            }
+        },
+        addChild() {
+        if (this.childrenData.length < 5) {
+            const newChild = {
+                id: this.childrenData.length, 
+                name: '', 
+            };
+            this.childrenData.push(newChild);
+        } else {
+            console.log('Достигнут максимальный лимит детей (5)');
+        }
+    }
+
+    },
+    computed:{
+        canAdd() {
+            return this.childrenData.length === 5
         }
     },
     data(){
         return {
-            childrenData: [
-                {
-                    name: 'Пётр',
-                    age: '10'
-                },
-                {
-                    name: 'Василий',
-                    age: '14'
-                }
-            ],
+            childrenData: [],
             userData: {
                 name: '',
                 age: ''
