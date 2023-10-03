@@ -111,7 +111,8 @@ export default {
 
         <main-block title="Дети (макс.&nbsp;5)">
             <template v-slot:header-button>
-                <BaseButton 
+                <BaseButton
+                    v-if="children.length < 5"
                     label="Добавить"
                     @click="addChild"
                     :disabled="canAdd"
