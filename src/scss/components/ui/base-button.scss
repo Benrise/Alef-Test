@@ -9,6 +9,7 @@
     gap: rem(4);
     width: fit-content;
     box-sizing: border-box;
+    transition: 500ms cubic-bezier(0, 0, 0.2, 1) 0ms;
     &__label {
         font-size: rem(14);
         font-weight: 500;
@@ -19,6 +20,11 @@
 
     &:hover {
         opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.9;
+        transform: scale(0.95);
     }
 
     &_disabled {

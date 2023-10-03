@@ -57,7 +57,6 @@ export default {
             <template v-for="(child, index) in children" :key="index">
                 <BaseButton
                   :label="`${child.name}, ${child.age} лет`"
-                  @click="clickButton"
                   severity="default"
                   storage
                 />

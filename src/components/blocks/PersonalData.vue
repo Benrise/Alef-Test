@@ -47,6 +47,7 @@ export default {
         saveData() {
             localStorage.setItem('user', JSON.stringify(this.user));
             localStorage.setItem('children', JSON.stringify(this.children));
+            this.changes = false;
         },
 
     },
@@ -63,10 +64,29 @@ export default {
                 age: ''
             },
             errors: [],
+            changes: false
         }
     },
     created() {
         this.loadDataFromLocalStorage();
+    },
+    watch:{
+        children: {
+            handler(newValue, oldValue){
+                if (newValue === oldValue){
+                    this.changes = true
+                }
+            },
+            deep: true
+        },
+        user: {
+            handler(newValue, oldValue){
+                if (newValue === oldValue){
+                    this.changes = true 
+                }
+            },
+            deep: true
+        }
     }
 }
 </script>
@@ -121,7 +141,7 @@ export default {
             <template v-slot:footer-button>
                 <BaseButton 
                     label="Сохранить"
-                    :disabled="false"
+                    :disabled="!changes"
                     severity="primary"
                     type="submit"
                 />
