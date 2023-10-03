@@ -47,9 +47,9 @@
         <template v-slot:footer-button>
             <BaseButton 
                 label="Сохранить"
-                @click="clickButton"
                 :disabled="false"
                 severity="primary"
+                @click="saveData()"
             />
         </template>
     </main-block>
@@ -64,9 +64,6 @@ export default {
     name: "PersonalData",
     components: {BaseForm, MainBlock, BaseButton, ChildForm},
     methods:{
-        clickButton(){
-            console.log('Added!')
-        },
         removeChild(childId) {
             const index = this.childrenData.findIndex(child => child.id === childId);
             if (index !== -1) {
@@ -74,22 +71,44 @@ export default {
             }
         },
         addChild() {
-        if (this.childrenData.length < 5) {
-            const newChild = {
-                id: this.childrenData.length, 
-                name: '', 
-            };
-            this.childrenData.push(newChild);
-        } else {
-            console.log('Достигнут максимальный лимит детей (5)');
+            if (this.childrenData.length < 5) {
+                const newChild = {
+                    id: this.childrenData.length, 
+                    name: '', 
+                };
+                this.childrenData.push(newChild);
+            } 
+            else {
+                console.log('Достигнут максимальный лимит детей (5)');
+            }
+        },
+        saveDataToLocalStorage() {
+            localStorage.setItem('userData', JSON.stringify(this.userData));
+            localStorage.setItem('childrenData', JSON.stringify(this.childrenData));
+        },
+
+        loadDataFromLocalStorage() {
+            const userData = localStorage.getItem('userData');
+            if (userData) {
+                this.userData = JSON.parse(userData);
+            }
+
+            const childrenData = localStorage.getItem('childrenData');
+            if (childrenData) {
+                this.childrenData = JSON.parse(childrenData);
+            }
+        },
+
+        saveData(){
+            localStorage.setItem('userData', JSON.stringify(this.userData));
+            localStorage.setItem('childrenData', JSON.stringify(this.childrenData));
         }
-    }
 
     },
     computed:{
         canAdd() {
             return this.childrenData.length === 5
-        }
+        },
     },
     data(){
         return {
@@ -99,6 +118,9 @@ export default {
                 age: ''
             },
         }
+    },
+    created() {
+        this.loadDataFromLocalStorage();
     }
 }
 </script>

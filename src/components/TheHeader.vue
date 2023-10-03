@@ -29,14 +29,22 @@
             </nav>
             <div class="header__menu-icon" @click="toggleMenu" :class="{ '_active': isMenuOpen }"><span></span></div>
             <div class="header__filler">
-
+                <BaseButton
+                    leftIcon="update"
+                    severity="default"
+                    text
+                    @click="clearStorage()"
+                />
             </div>
         </div>
     </header>
 </template>
 
 <script>
+import BaseButton from "@/components/ui/BaseButton.vue";
+
     export default {
+        components: {BaseButton},
         data() {
             return {
                 isMenuOpen: false,
@@ -47,12 +55,17 @@
                 document.body.classList.toggle('_lock');
                 this.isMenuOpen = !this.isMenuOpen;
             },
+            clearStorage(){
+                localStorage.clear();
+                window.location.reload();
+            }
         },
         watch: {
             '$route' () {
                 this.isMenuOpen = false
                 document.body.classList.remove('_lock');
             }
-        }
+        },
+        
     }
 </script>
