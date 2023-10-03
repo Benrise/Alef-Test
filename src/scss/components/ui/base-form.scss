@@ -2,6 +2,11 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    gap: 8px;
+
+    &__error-text{
+        font-size: rem(13);
+    }
 
     &__input {
         height: rem(56);
@@ -18,10 +23,17 @@
         }
     }
 
-    &.filled {
+    &.form_filled {
         label {
             transform: translate(0, rem(12));
             font-size: rem(13); 
+        }
+    }
+
+    &.form_error {
+        .form__input {
+            border: 1px solid red;
+            color: red;
         }
     }
 

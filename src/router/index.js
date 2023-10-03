@@ -1,20 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import FormPage from "@/pages/FormPage.vue";
 import PreviewPage from "@/pages/PreviewPage.vue";
-import HomePage from "@/pages/HomePage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'HomePage',
-      component: HomePage
-    },
-    {
-        path: '/form',
+        path: '/',
         name: 'FormPage',
-        component: FormPage
+        component: FormPage,
+        alias: '/form'
     },
     {
         path: '/preview',

@@ -52,11 +52,11 @@ svg {
     shape-rendering:geometricPrecision;
 }
 
-@import 'header.scss';
-@import 'main.scss';
-@import 'footer.scss';
+@import './components/header.scss';
+@import './components/main.scss';
+@import './components/footer.scss';
 
-@import 'base-form.scss';
-@import 'base-button.scss';
-@import 'child-form.scss';
-@import 'empty-state.scss';
+@import './components/ui/base-form.scss';
+@import './components/ui/base-button.scss';
+@import './components/ui/child-form.scss';
+@import './components/ui/empty-state.scss';

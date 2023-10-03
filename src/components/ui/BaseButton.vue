@@ -1,13 +1,3 @@
-<template>
-    <div class="button" 
-    :class="buttonClasses"
-    >
-        <i class="material-icons" v-if="leftIcon">{{leftIcon}}</i>
-        <span class="button__label">{{ label }}</span>
-        <i class="material-icons" v-if="rightIcon">{{rightIcon}}</i>
-    </div>
-</template>
-
 <script>
 export default {
     name: "BaseButton",
@@ -43,9 +33,11 @@ export default {
         storage: {
             type: Boolean,
             default: false
+        },
+        type: {
+            type: String,
+            default: 'button'
         }
-
-        
     },
     data(){
         return {
@@ -74,3 +66,15 @@ export default {
 
 }
 </script>
+
+<template>
+    <button 
+        class="button" 
+        :class="buttonClasses"
+        :type="type"
+    >
+        <i class="material-icons" v-if="leftIcon">{{leftIcon}}</i>
+        <span class="button__label">{{ label }}</span>
+        <i class="material-icons" v-if="rightIcon">{{rightIcon}}</i>
+    </button>
+</template>

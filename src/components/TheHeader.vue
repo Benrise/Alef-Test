@@ -1,3 +1,33 @@
+<script>
+import BaseButton from "@/components/ui/BaseButton.vue";
+
+    export default {
+        components: {BaseButton},
+        data() {
+            return {
+                isMenuOpen: false,
+            }
+        },
+        methods: {
+            toggleMenu() {
+                document.body.classList.toggle('_lock');
+                this.isMenuOpen = !this.isMenuOpen;
+            },
+            clearStorage(){
+                localStorage.clear();
+                window.location.reload();
+            }
+        },
+        watch: {
+            '$route' () {
+                this.isMenuOpen = false
+                document.body.classList.remove('_lock');
+            }
+        },
+        
+    }
+</script>
+
 <template>
     <header class="header">
         <div class="header__container">
@@ -39,33 +69,3 @@
         </div>
     </header>
 </template>
-
-<script>
-import BaseButton from "@/components/ui/BaseButton.vue";
-
-    export default {
-        components: {BaseButton},
-        data() {
-            return {
-                isMenuOpen: false,
-            }
-        },
-        methods: {
-            toggleMenu() {
-                document.body.classList.toggle('_lock');
-                this.isMenuOpen = !this.isMenuOpen;
-            },
-            clearStorage(){
-                localStorage.clear();
-                window.location.reload();
-            }
-        },
-        watch: {
-            '$route' () {
-                this.isMenuOpen = false
-                document.body.classList.remove('_lock');
-            }
-        },
-        
-    }
-</script>

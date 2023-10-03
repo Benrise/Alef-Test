@@ -1,3 +1,12 @@
+<script>
+export default {
+  name: "MainBlock",
+  props: {
+    title: String,
+  },
+};
+</script>
+
 <template>
     <section class="main-block">
       <div class="main-block__container">
@@ -15,14 +24,5 @@
       </div>
     </section>
   </template>
-  
-  <script>
-  export default {
-    name: "MainBlock",
-    props: {
-      title: String,
-    },
-  };
-  </script>
 
   
