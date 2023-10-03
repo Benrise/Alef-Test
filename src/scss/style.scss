@@ -12,6 +12,9 @@ $material-design-icons-font-directory-path: 'material-design-icons-iconfont/dist
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: $colors-background;
+    &._lock {
+        overflow: hidden;
+    }
 }
 
 #app,
