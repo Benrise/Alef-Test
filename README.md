@@ -1,35 +1,69 @@
-# Test Alef
+# Тестовое задание для компании Alef Devolopment
 
-This template should help get you started developing with Vue 3 in Vite.
+Веб-приложение, написанное на Vue 3 (Options API), где пользователь может заполнить информацию о себе и своих детях.
 
-## Recommended IDE Setup
+## Задание
+1. Блок персональных данных пользователя:
+  - Поле для ввода ФИО пользователя.
+  - Поле для ввода возраста пользователя.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+2. Блок информации о детях пользователя:
+  - Изначально, пользователь видит только кнопку "+", предназначенную для добавления информации о ребенке.
+  - При нажатии на кнопку "+", появляется блок с полями для ввода информации о ребенке, включая имя и возраст.
+  - Пользователь может добавить информацию о до 5 детях. Когда пользователь добавил 5 детей, кнопка "+" исчезает и больше недоступна.
+  - Для каждого ребенка должна быть доступна кнопка "удалить", при нажатии на которую соответствующая запись удаляется.
 
-## Customize configuration
+## Стек
+Приложение разработано на связке Vue 3 + Vite
+Для реализации маршрутизации использовался [Vue Router](https://router.vuejs.org/)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Развертывание
 
-## Project Setup
+Для локального запуска веб-приложения необходим:
 
+* npm >= 5.5.0
+* node >= 12.0
+
+**Клонирование**
+```sh
+git clone https://github.com/Benrise/Alef-Test.git
+```
+
+**Установка**
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
+**Запуск**
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+*Note:*
+<br>
+*В случае возникновения возможных ошибок при установке модуля "node-sass", рекомендуется выполнить:*
+```sh
+npm uninstall node-sass
+npm install --save-dev sass
+```
+
+### Сборка
 
 ```sh
 npm run build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+### Материалы
+*Скриншоты созданного веб-приложения:*
 
-```sh
-npm run lint
-```
+**Страница "Форма"**
+![image](https://github.com/Benrise/Alef-Test/assets/55480132/ca229606-f701-4759-939d-3aaf30202d3f)
+
+**Страница "Превью"**
+![image](https://github.com/Benrise/Alef-Test/assets/55480132/71513b5f-e928-4ebb-afb3-de42b837b5ef)
+
+**Страница "Форма" (пустое состояние)**
+![image](https://github.com/Benrise/Alef-Test/assets/55480132/0746c4d7-e4ec-4b9c-a8b3-0c8857cf05d4)
+
+**Страница "Превью"  (пустое состояние)**
+![image](https://github.com/Benrise/Alef-Test/assets/55480132/942d4eb8-d647-4707-b374-52a656b60a4b)
