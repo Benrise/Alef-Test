@@ -46,12 +46,12 @@ import BaseButton from "@/components/ui/BaseButton.vue";
             <nav class="header__menu menu" :class="{ '_active': isMenuOpen }">
                 <ul class="menu__list">
                     <li class="menu__item">
-                        <router-link to="/form" class="menu__link" >
+                        <router-link to="/form" class="menu__link" :class="{ 'menu__link_active': $route.path === '/form'}">
                             Форма
                         </router-link>
                     </li>
                     <li class="menu__item">
-                        <router-link to="/preview" class="menu__link" >
+                        <router-link to="/preview" class="menu__link" :class="{ 'menu__link_active': $route.path === '/preview' }">
                             Превью
                         </router-link>
                     </li>

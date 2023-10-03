@@ -6,10 +6,13 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-        path: '/',
+      path: '/',
+      redirect: { name: 'FormPage' },
+    },
+    {
+        path: '/form',
         name: 'FormPage',
         component: FormPage,
-        alias: '/form'
     },
     {
         path: '/preview',
