@@ -4,7 +4,7 @@
 
 
 Просмотр на Netify:
-[https://resplendent-belekoy-f53266.netlify.app/](https://ephemeral-frangollo-c3cb8f.netlify.app/form)
+[https://ephemeral-frangollo-c3cb8f.netlify.app](https://ephemeral-frangollo-c3cb8f.netlify.app)
 
 ## Структура
 
