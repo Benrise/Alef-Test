@@ -15,7 +15,7 @@ import BaseButton from "@/components/ui/BaseButton.vue";
             },
             clearStorage(){
                 localStorage.clear();
-                window.location.reload();
+                history.go(0);
             }
         },
         watch: {
