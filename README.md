@@ -2,6 +2,10 @@
 
 Веб-приложение, написанное на Vue 3 (Options API), где пользователь может заполнить информацию о себе и своих детях.
 
+
+Просмотр на Netify:
+[https://resplendent-belekoy-f53266.netlify.app/](https://ephemeral-frangollo-c3cb8f.netlify.app/form)
+
 ## Структура
 
 * [Задание](#задание)
